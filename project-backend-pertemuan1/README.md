@@ -1,83 +1,83 @@
-# Backend API Service — Dasar Pemrograman Backend (KK112105)
+# Proyek Banckend (Flask)
+Proyek ini dibuat untuk memenuhi tugas dan praktikum mandiri mata kuliah Dasar Pemrograman Backend di STIKOM PGRI Banyuwangi. Proyek ini menggunakan framework Python Flask untuk membangun RESTful API sederhana dengan format respons JSON yang konsisten.
 
-Proyek REST API sederhana menggunakan **Flask**, dibuat untuk mata kuliah **Dasar Pemrograman Backend (KK112105)** — STIKOM PGRI Banyuwangi.
+---
+## Daftar Endpoint API
+Berikut adalah dokumentasi rute endpoint yang tersedia pada layanan backend ini:
 
-Tugas ini merupakan **Praktikum Mandiri 1**, dengan penambahan endpoint `/api/v1/status` pada proyek Flask pertemuan 1.
+### 1. Root / Health Check Service
+* **URL:** `/`
+* **Method:** `GET`
+* **Deskripsi:** Endpoint utama untuk memeriksa apakah layanan API server aktif dan berjalan dengan baik.
+* **Contoh Payload (JSON):**
+  ```json
+  {
+    "status": "success",
+    "message": "Backend API Service Aktif dan Berjalan",
+    "version": "1.0.0"
+  }
+  ```
 
-## 📋 Deskripsi
+![alt text](endpoint1.png) 
+ 
 
-Aplikasi ini menyediakan beberapa endpoint REST API yang menampilkan informasi status server, data akademik, dan profil mahasiswa (dummy) dalam format JSON.
+### 2. Informasi Akademik & Perkuliahan
+* **URL:** `/api/v1/info`
+* **Method:** `GET`
+* **Deskripsi:** Mengembalikan informasi terkait mata kuliah, kode kelas, institusi, dan topik pertemuan.
+* **Contoh Payload (JSON):**
+  ```json
+  {
+  "status": "success",
+  "data": {
+    "course": "Dasar Pemrograman Backend",
+    "code": "KK112105",
+    "institution": "STIKOM PGRI Banyuwangi",
+    "meeting": 1,
+    "topic": "Environment Setup & Flask Core Concept"
+  }
+  }
+  ``` 
 
-## 🛠️ Teknologi
+  ![alt text](endpoint2.png)
 
-- Python 3
-- Flask
 
-## 📁 Struktur Proyek
+### 3. Profil Data Mahasiswa
+* **URL:** `/api/v1/mahasiswa`
+* **Method:** `GET`
+* **Deskripsi:** 
+Mengembalikan data dummy profil mahasiswa yang mengakses atau mengelola layanan backend.
+* **Contoh Payload (JSON):**
+  ```json
+  {
+  "status": "success",
+  "data": {
+    "nim": "202611001",
+    "nama": "Mahasiswa Backend",
+    "prodi": "Teknik Informatika",
+    "status_akademik": "Aktif"
+  }
+  }
+  ```
 
-```
-.
-├── app.py
-├── requirements.txt
-├── .gitignore
-└── README.md
-```
+  ![alt text](endpoint3.png)
 
-## ⚙️ Instalasi & Menjalankan
 
-1. **Clone repository**
-   ```bash
-   git clone <url-repository-anda>
-   cd <nama-folder>
-   ```
-
-2. **Buat virtual environment (opsional tapi disarankan)**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate      # Linux/Mac
-   venv\Scripts\activate         # Windows
-   ```
-
-3. **Install dependencies**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Jalankan aplikasi**
-   ```bash
-   python app.py
-   ```
-
-5. Aplikasi akan berjalan di `http://127.0.0.1:5000`
-
-## 📡 Daftar Endpoint
-
-| Method | Endpoint             | Deskripsi                                      |
-|--------|-----------------------|-------------------------------------------------|
-| GET    | `/`                    | Root / health check service                    |
-| GET    | `/api/v1/info`         | Informasi akademik & perkuliahan                |
-| GET    | `/api/v1/mahasiswa`    | Profil data mahasiswa (dummy)                   |
-| GET    | `/api/v1/status`       | Status operasional server (waktu & versi Python)|
-
-### Contoh Response `/api/v1/status`
-
-```json
-{
+### 4. Status Operasional Server
+* **URL:** `/api/v1/status`
+* **Method:** `GET`
+* **Deskripsi:** 
+Mengembalikan status operasional server secara real-time, lengkap dengan waktu sistem (timestamp berformat ISO) dan versi runtime python yang digunakan.
+* **Contoh Payload (JSON):**
+  ```json
+  {
   "status": "success",
   "data": {
     "server_status": "operational",
-    "timestamp": "2026-09-25T10:00:00.000000+00:00",
-    "python_version": "3.x.x"
+    "timestamp": "2026-09-25T21:22:10Z",
+    "python_version": "3.11.0"
   }
-}
-```
+  }
+  ```
 
-## 👤 Informasi Mahasiswa
-
-- **Mata Kuliah:** Dasar Pemrograman Backend (KK112105)
-- **Institusi:** STIKOM PGRI Banyuwangi
-- **Tugas:** Praktikum Mandiri 1 — Penambahan endpoint `/api/v1/status`
-
-## 📄 Lisensi
-
-Proyek ini dibuat untuk keperluan tugas akademik.
+  ![alt text](endpoint4.png)
