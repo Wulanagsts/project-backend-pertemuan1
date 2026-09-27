@@ -17,9 +17,9 @@ Berikut adalah dokumentasi rute endpoint yang tersedia pada layanan backend ini:
     "version": "1.0.0"
   }
   ```
-
+ini hasilnya:
 ![alt text](endpoint1.png) 
- 
+
 
 ### 2. Informasi Akademik & Perkuliahan
 * **URL:** `/api/v1/info`
@@ -38,7 +38,7 @@ Berikut adalah dokumentasi rute endpoint yang tersedia pada layanan backend ini:
   }
   }
   ``` 
-
+  ini hasilnya:
   ![alt text](endpoint2.png)
 
 
@@ -59,7 +59,7 @@ Mengembalikan data dummy profil mahasiswa yang mengakses atau mengelola layanan 
   }
   }
   ```
-
+  ini hasilnya:
   ![alt text](endpoint3.png)
 
 
@@ -79,5 +79,5 @@ Mengembalikan status operasional server secara real-time, lengkap dengan waktu s
   }
   }
   ```
-
+  ini hasilnya:
   ![alt text](endpoint4.png)
